@@ -15,11 +15,13 @@
 
 <style>
   main {
+    --padding: 2rem;
     display: grid;
+    gap: var(--padding);
     justify-items: center;
-    min-height: 100%;
     margin: 0 auto;
-    padding: 4rem;
+    min-height: calc(100% - (2 * var(--padding)));
+    padding: var(--padding);
   }
   .logo {
     width: 48px;
