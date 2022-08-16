@@ -1,0 +1,43 @@
+<svg viewBox="0 0 64 64" width="128" height="128" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <style>
+    .default {
+      fill: #fff;
+    }
+  </style>
+  <defs>
+    <filter id="filter" x="-1" y="-1" width="10" height="10">
+      <feFlood result="flood-blue" style="flood-color: #15e;"></feFlood>
+      <feMorphology result="m-blue" in="SourceAlpha" radius="4" operator="dilate"></feMorphology>
+      <feComposite result="outline-blue" in="flood-blue" in2="m-blue" operator="in"></feComposite>
+
+      <feFlood result="flood-green" style="flood-color:#3c3;"></feFlood>
+      <feMorphology result="m-green" in="SourceAlpha" radius="3" operator="dilate"></feMorphology>
+      <feComposite result="outline-green" in="flood-green" in2="m-green" operator="in"></feComposite>
+
+      <feFlood result="flood-yellow" style="flood-color: #fd4;"></feFlood>
+      <feMorphology result="m-yellow" in="SourceAlpha" radius="2" operator="dilate"></feMorphology>
+      <feComposite result="outline-yellow" in="flood-yellow" in2="m-yellow" operator="in"></feComposite>
+
+      <feFlood result="flood-red" style="flood-color: #f50;"></feFlood>
+      <feMorphology result="m-red" in="SourceAlpha" radius="1" operator="dilate"></feMorphology>
+      <feComposite result="outline-red" in="flood-red" in2="m-red" operator="in"></feComposite>
+
+      <feMerge result="merge-1">
+        <feMergeNode in="outline-blue"></feMergeNode>
+        <feMergeNode in="outline-green"></feMergeNode>
+        <feMergeNode in="outline-yellow"></feMergeNode>
+        <feMergeNode in="outline-red"></feMergeNode>
+        <feMergeNode in="SourceGraphic"></feMergeNode>
+      </feMerge>
+    </filter>
+    <bx:grid x="0" y="0" width="4" height="4"></bx:grid>
+  </defs>
+  <polygon filter="url('#filter')" class="default"
+    points="8 28 8 8 28 8 28 28 24 28 24 12 20 12 20 16 16 16 16 12 12 12 12 28"></polygon>
+  <polygon filter="url('#filter')" class="default"
+    points="36 56 36 36 56 36 56 56 52 56 52 40 48 40 48 44 44 44 44 40 40 40 40 56"></polygon>
+  <polygon class="default"
+    points="36 28 36 8 44 8 44 12 48 12 48 16 52 16 52 8 56 8 56 28 52 28 52 24 48 24 48 20 44 20 44 16 40 16 40 28"
+    style="filter: url(#filter);"></polygon>
+  <polygon filter="url('#filter')" class="default" points="8 36 28 36 28 40 20 40 20 56 16 56 16 40 8 40"></polygon>
+</svg>
